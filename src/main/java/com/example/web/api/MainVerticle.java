@@ -43,7 +43,7 @@ public class MainVerticle extends AbstractVerticle {
     ServiceBinder todoSvcBinder = new ServiceBinder(vertx);
     todoSvcBinder.setAddress("api.todos").register(TodosService.class, todoService);
 
-    RouterBuilder.create(vertx, "openapi.yml")
+    RouterBuilder.create(vertx, "https://gist.githubusercontent.com/InfoSec812/a8e5ca3920e940ffcedced9990738f65/raw/1bc8b96d30bf760375ee958a8651cbccc6c718c0/openapi-vertx-jooq.yml")
       .compose(this::mountRoutes)
       .compose(this::buildParentRouter)
       .compose(this::buildHttpServer)
